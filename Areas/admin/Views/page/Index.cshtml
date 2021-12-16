@@ -1,0 +1,59 @@
+@model IEnumerable<mvc.Models.Base.page>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.roles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.namePage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.urlPage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.keyword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.meta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.roles)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.namePage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.urlPage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.keyword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.meta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idPage">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idPage">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idPage">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

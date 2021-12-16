@@ -1,0 +1,49 @@
+@model mvc.Models.Base.module
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>module</h4>
+<hr />
+<div class="row">
+    <div class="col">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idModule" />
+            <div class="form-group">
+                <label asp-for="nameModule" class="control-label"></label>
+                <input asp-for="nameModule" class="form-control" />
+                <span asp-validation-for="nameModule" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="defaultHtml" class="control-label"></label>
+                <input asp-for="defaultHtml" class="form-control" />
+                <span asp-validation-for="defaultHtml" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="defaultCss" class="control-label"></label>
+                <input asp-for="defaultCss" class="form-control" />
+                <span asp-validation-for="defaultCss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="urlModule" class="control-label"></label>
+                <input asp-for="urlModule" class="form-control" />
+                <span asp-validation-for="urlModule" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
